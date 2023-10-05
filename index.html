@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a0c35383ef.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="row" id="search-form">
+        <div class="col-5">
+          <input
+            type="text"
+            class="form-control"
+            id="city-input"
+            placeholder="Enter a city"
+            autocomplete="off"
+          />
+        </div>
+        <div class="col">
+          <input type="submit" class="btn btn-primary" value="Search" />
+        </div>
+        <div class="col-2">
+          <input
+            type="submit"
+            class="btn btn-primary"
+            id="current-button"
+            value="Current"
+          />
+        </div>
+      </form>
+      <div class="today-weather">
+        <div class="row search-info">
+          <div class="col">
+            <h1 id="city"></h1>
+            <span id="date-time"></span>
+            <div id="sky-description"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 temperature-stats">
+            <img src="#" alt="#" id="current-temperature-icon" />
+            <span id="current-temperature"></span>
+            <span class="units"
+              ><a href="#" class="unit unclickable" id="celsius">°C</a> |
+              <a href="#" class="unit" id="fahrenheit">°F</a></span
+            >
+          </div>
+          <div class="col-sm-1 weather-stats-icons">
+            <ul>
+              <li>
+                <i
+                  class="fa-solid fa-temperature-three-quarters weather-stats-icon"
+                ></i>
+              </li>
+              <li>
+                <i class="fa-solid fa-droplet weather-stats-icon"></i>
+              </li>
+              <li>
+                <i class="fa-solid fa-wind weather-stats-icon"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="col weather-stats">
+            <ul>
+              <li>
+                Feels like: <span id="feels-like"></span>°<span
+                  id="feels-like-unit"
+                  >C</span
+                >
+              </li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="forecast"></div>
+    </div>
+    <footer>
+      <small>
+        <a
+          href="https://github.com/rachelgapasin/weather-app"
+          target="_blank"
+          id="source-code"
+          >Open-source code</a
+        >
+        by Rachel Gapasin
+      </small>
+    </footer>
+    <script src="/src/script.js"></script>
+  </body>
+</html>
